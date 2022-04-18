@@ -1,19 +1,148 @@
-/* Vars */
+/* Variaveis */
+:root {
+  --header-height: 4.5rem;
 
-*{
+  /* colors */
+  --hue: 35;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 56% 37%);
+  --base-color-second: hsl(var(--hue) 65% 78%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+}
+
+/* **** RESET ***** */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
-  
+
+a {
+  text-decoration: none;
+}
+.button{
+  background: var(--base-color);
+  color: var(--text-color-light);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  transition:background 0.3s;
+}
+.button:hover{
+  background: var(--base-color-alt);
+
 }
 
-#header{
-  height: 4,5rem;
-}
-
-.container{
+img {
   width: 100%;
-  margin:0 1.5rem;
+  height: auto;
+}
+
+/* ******** base **** */
+body {
+  font: 400 1rem 'DM Sans', sans-serif;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: auto;
+}
+h1 {
+  font: 700 1.87rem 'Poppins', sans-serif;
+  color: var(--title-color);
+}
+.divider-1{
+  height: 3px;
+  
+
+  background: linear-gradient(
+  270deg,
+  hsla(var(--hue), 36%, 57%, 1) 0%,
+  hsla(var(--hue), 65%, 88%, 0.34) 100%);
+}
+
+/*  ******* Layouy ******* */
+
+.container {
+  
+  margin: 0 1.5rem;
+}
+.grid{
+  display: grid;
+  gap:2rem
+}
+.section{
+  padding: 4rem 0;
+
+}
+/* ****** header *****/
+#Header {
+  border-bottom: 1px solid var(--base-color);
+  display: flex;
+  background-color: var(--body-color);
+
+  width: 100%;
+  position:fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+nav {
+  height:3.5rem ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font: 700 1.31rem 'Poppins', sans-serif;
+  color: var(--title-color);
+}
+.logo span {
+  color: var(--base-color);
+}
+
+/* ****** Sections **** */
+main{
+  margin-top: var(--header-height);
+}
+#Home{
+  overflow: hidden;
+}
+#Home .container{
+margin: 0;
+}
+#Home .img img{
+  position: relative;
+  right: 2.93rem;
+}
+#Home .img{
+  position: relative;
+}
+#Home .img::before{
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: var(--base-color-second);
+  position: absolute;
+  top: -16.8%;
+  left:16.8%;
+  z-index: 0;
+}
+#Home .img img,
+#Home .img::before{
+  border-radius: 0.25rem;
+}
+
+#Home .text{
+  margin: 0 1.5rem;
+  text-align: center;
+}
+
+#Home .text h1{
+ margin-bottom: 1rem;
+}
+#Home .text p{
+  margin-bottom:2rem ;
 }
