@@ -31,9 +31,7 @@ window.addEventListener('scroll', function(){
   }
 })
 
-
 // ---- swiper
-
 const swiper = new Swiper('.swiper', {
   slidesPerView:'auto',
   pagination: {
