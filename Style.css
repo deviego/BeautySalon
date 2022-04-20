@@ -3,7 +3,7 @@
   --header-height: 4.5rem;
 
   /* colors */
-  --hue: 35;
+  --hue: 1235;
   /* HSL color mode */
   --base-color: hsl(var(--hue) 56% 37%);
   --base-color-second: hsl(var(--hue) 65% 78%);
@@ -376,3 +376,30 @@ margin-right: 0;
 .swiper-pagination-bullet-active{
   background: var(--base-color);
 }
+
+
+/* *** contact */
+
+
+#Contact .grid{
+  gap: 4rem;
+  
+}
+#Contact .text p{
+  margin-bottom: 2rem;
+}
+#Contact .button{
+  
+}
+#Contact .button i,
+#Contact ul.grid li i{
+font-size: 1.3rem;
+margin-right: 0.5rem;
+}
+#Contact ul.grid{
+  gap: 1rem;
+}
+#Contact ul.grid li i{
+  color: var(--base-color);
+}
+

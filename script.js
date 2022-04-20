@@ -40,3 +40,24 @@ const swiper = new Swiper('.swiper', {
   mousewheel: true,
   keyboard: true,
 })
+
+// scroll
+
+let hd = document.querySelector('#header')
+const SLOW = {
+  origin: 'top',
+  distance: '30px',
+  duration:800,
+  reset:true,
+  Interval:100
+}
+
+
+ScrollReveal().reveal( `
+ #Home .img, #Home .text,
+ #About .img, #About .text,
+ #Services header, #Services .card,
+ #Testemonials header, #Testemonials .swiper,
+ #Contact
+  
+`,SLOW)
