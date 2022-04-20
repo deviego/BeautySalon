@@ -3,7 +3,7 @@
   --header-height: 4.5rem;
 
   /* colors */
-  --hue: 1235;
+  --hue: 35;
   /* HSL color mode */
   --base-color: hsl(var(--hue) 56% 37%);
   --base-color-second: hsl(var(--hue) 65% 78%);
