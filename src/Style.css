@@ -1,0 +1,405 @@
+/* Variaveis */
+:root {
+  --header-height: 4.5rem;
+
+  /* colors */
+  --hue: 1235;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 56% 37%);
+  --base-color-second: hsl(var(--hue) 65% 78%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+}
+
+/* **** RESET ***** */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+.button{
+  background: var(--base-color);
+  color: var(--text-color-light);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  transition:background 0.3s;
+}
+.button:hover{
+  background: var(--base-color-alt);
+
+}
+span{
+color: var(--base-color);
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* ******** base **** */
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  font: 400 1rem 'DM Sans', sans-serif;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: auto;
+}
+.title {
+  font: 700 1.87rem 'Poppins', sans-serif;
+  color: var(--title-color);
+}
+.divider-1{
+  height: 3px;
+  
+
+  background: linear-gradient(
+  270deg,
+  hsla(var(--hue), 36%, 57%, 1) 0%,
+  hsla(var(--hue), 65%, 88%, 0.34) 100%);
+}
+
+/*  ******* Layouy ******* */
+
+.container {
+  
+  margin: 0 1.5rem;
+}
+.grid{
+  display: grid;
+  gap:2rem
+}
+.section{
+  padding: 4rem 0;
+}
+.section header{
+  margin-bottom: 4rem;
+}
+
+.section .title{
+  margin-bottom: 1rem;
+}
+/* ****** header *****/
+#Header {
+  border-bottom: 1px solid var(--base-color);
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--body-color);
+
+  width: 100%;
+  position:fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+#Header.scroll{
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* **** logo */
+.logo {
+  font: 700 1.31rem 'Poppins', sans-serif;
+  color: var(--title-color);
+}
+.logo span {
+  color: var(--base-color);
+}
+/* **** navegation */
+nav {
+  height:3.5rem ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+nav ul li{
+  text-align: center;
+}
+nav ul li a{
+  transition: color 0.2s;
+  position: relative;
+}
+nav ul li a:hover{
+  color: var(--base-color);
+}
+nav ul li a::after{
+  content: "";
+  width: 0%;
+  height: 2px;
+
+  background: var(--base-color);
+  
+  position: absolute;
+  left:0;
+  bottom: -1.5rem;
+}
+
+nav ul li a:hover::after{
+width: 100%;
+transition:0.5s
+}
+
+nav .menu{
+  opacity: 0;
+  visibility: hidden;
+
+  top: -20rem;
+  transition: 0.2s;
+}
+
+nav .menu ul{
+  display: none;
+
+}
+/* *** show menu */
+
+nav.show .menu{
+  opacity: 1;
+  visibility: visible;
+  background: var(--body-color);
+  
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0; 
+  
+  display: grid;
+  place-content:center;
+}
+
+nav.show .menu ul{
+  display: grid;
+}
+
+nav.show ul.grid{
+  gap: 4rem;
+
+}
+/* ****toggle */
+nav .icon-close{
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  right: 1.5rem;
+  top: -1.5rem;
+
+  transition: 0.2s;
+}
+nav.show div.icon-close{
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
+}
+.toggle{
+  color: var(--base-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ****** Sections **** */
+main{
+  margin-top: var(--header-height);
+}
+#Home{
+  overflow: hidden;
+}
+#Home .container{
+margin: 0;
+}
+#Home .img img{
+  position: relative;
+  right: 2.93rem;
+}
+#Home .img{
+  position: relative;
+}
+#Home .img::before{
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: var(--base-color-second);
+  position: absolute;
+  top: -16.8%;
+  left:16.8%;
+  z-index: 0;
+}
+#Home .img img,
+#Home .img::before{
+  border-radius: 0.25rem;
+}
+
+#Home .text{
+  margin: 0 1.5rem;
+  text-align: center;
+}
+
+#Home .text h1{
+ margin-bottom: 1rem;
+}
+#Home .text p{
+  margin-bottom:2rem ;
+}
+/* ****** About */
+#About{
+  background: white;
+}
+#About .img img{
+  position: relative;
+  right: 2.93rem;
+}
+#About .img{
+  position: relative;
+}
+#About .img::before{
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: var(--base-color-second);
+  position: absolute;
+  top: -8.3%;
+  left:-33%;
+  z-index: 0;
+}
+#About .img img,
+#About .img::before{
+  border-radius: 0.25rem;
+}
+
+.divider-2{
+  height: 3px;
+  
+
+  background: linear-gradient(
+  270deg,
+  hsla(var(--hue), 65%, 88%, 0.34),
+  hsla(var(--hue), 36%, 57%, 1))
+}
+
+/* ***Serviços */
+.cards.grid{
+  gap: 1.5rem;
+}
+
+.card{
+  text-align: center;
+  padding: 3.65rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0,0, 0.8);
+}
+
+.card i{
+  display:block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+.card .title{
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+
+}
+
+/* ****** testemonials */
+
+#Testemonials{
+  background: white;
+  display: block;
+}
+#Testemonials{
+margin-left: 0;
+margin-right: 0;
+}
+#Testemonials header{
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+ margin-right: 1.5rem;
+}
+#Testemonials blockquote{
+  padding: 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0,0, 0.4);
+  border-radius: 0.5rem;
+}
+#Testemonials blockquote p{
+  position: relative;
+  text-indent: 1.85rem;
+  margin-bottom: 1.5rem;
+  color: var(--title-color);
+}
+
+#Testemonials blockquote p span.span{
+  font: 700 2.5rem serif;
+  position: absolute;
+  top:-0.375rem;
+  left: -1.85rem;
+}
+#Testemonials cite{
+ display: flex;
+ align-items: center;
+ font-style: normal;
+}
+#Testemonials cite img{
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  clip-path: circle();
+
+  margin-right: 0.5rem;
+}
+
+/* **** swiprer */
+.swiper{
+  padding: 4rem 1rem;
+}
+.swipe-slide{
+  height: auto;
+}
+.swiper-pagination-bullet{
+  width: 0.75rem;
+  height: 0.75rem;
+}
+.swiper-pagination-bullet-active{
+  background: var(--base-color);
+}
+
+
+/* *** contact */
+
+
+#Contact .grid{
+  gap: 4rem;
+  
+}
+#Contact .text p{
+  margin-bottom: 2rem;
+}
+#Contact .button{
+  
+}
+#Contact .button i,
+#Contact ul.grid li i{
+font-size: 1.3rem;
+margin-right: 0.5rem;
+}
+#Contact ul.grid{
+  gap: 1rem;
+}
+#Contact ul.grid li i{
+  color: var(--base-color);
+}
+
