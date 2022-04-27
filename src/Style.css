@@ -117,6 +117,9 @@ body {
 .logo span {
   color: var(--base-color);
 }
+.logo-alt span{
+  color: var(--body-color);
+}
 /* **** navegation */
 nav {
   height:3.5rem ;
@@ -402,4 +405,35 @@ margin-right: 0.5rem;
 #Contact ul.grid li i{
   color: var(--base-color);
 }
+
+/* *** contact */
+#footer{
+  background-color: var(--base-color);
+}
+
+#footer .brand .logo{
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+#footer .brand p{
+  color: var(--text-color-light);
+  margin-bottom: 0.75rem;
+}
+
+#footer i{
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+}
+#footer .socials a{
+  margin-right: 2rem;
+}
+
+/* responsive *****
+
+@media(min-width:992px ){
+
+} */
+
+
 
