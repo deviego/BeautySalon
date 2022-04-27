@@ -429,11 +429,13 @@ margin-right: 0.5rem;
   margin-right: 2rem;
 }
 
-/* responsive *****
+/* responsive *****/
 
 @media(min-width:992px ){
-
-} */
+  .text{
+    font-size: ;
+  }
+} 
 
 
 
