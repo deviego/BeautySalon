@@ -147,10 +147,12 @@ nav ul li a{
   transition: color 0.2s;
   position: relative;
 }
-nav ul li a:hover{
+nav ul li a:hover,
+nav ul li a.active{
   color: var(--base-color);
 }
-nav ul li a::after{
+nav ul li a::after
+{
   content: "";
   width: 0%;
   height: 2px;
@@ -162,9 +164,11 @@ nav ul li a::after{
   bottom: -1.5rem;
 }
 
-nav ul li a:hover::after{
+nav ul li a:hover::after,
+nav ul li a.active::after{
 width: 100%;
-transition:0.5s
+transition:0.5s;
+
 }
 
 nav .menu{
@@ -180,9 +184,6 @@ nav .menu ul{
 
 }
 /* *** show menu */
-nav .icon-menu{
-  display: none;
-}
 
 
 nav.show .menu{
@@ -468,7 +469,14 @@ margin-right: 0.5rem;
   nav .menu ul li a.title{
       font: 400 1rem var(--body-fonts);
 
-  }  
+  }
+    nav .menu ul li a.active{
+      font-weight: bold;
+    }
+  nav .icon-menu{
+    display: none;
+  }
+    
   
   
   .section{
@@ -495,6 +503,9 @@ margin-right: 0.5rem;
     #Home .text{
       order: 0;
     }
+    #Home .text p {
+      margin-bottom: 5rem;
+  }
 
     /* sobre */
     #About .container{
@@ -525,6 +536,8 @@ margin-right: 0.5rem;
       grid-auto-flow: column;
       width: fit-content;
     }
+    
+    
     /* testemonial */
     #Testemonials header{
       text-align: center;
@@ -532,6 +545,8 @@ margin-right: 0.5rem;
       margin-left: auto;
       margin-right: auto;
     }
+
+
     /* contact */
     #Contact .container{
       grid-auto-flow: column;
@@ -542,6 +557,10 @@ margin-right: 0.5rem;
       max-width: 35rem;
       margin-left: auto;
       margin-right: auto;
+
+    }
+    #Contact .links{
+      margin: 0;
 
     }
 
