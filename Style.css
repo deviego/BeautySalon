@@ -275,13 +275,17 @@ margin: 0;
 #Home .text p{
   margin-bottom:2rem ;
 }
+
+
 /* ****** About */
+
+
 #About{
   background: white;
 }
 #About .img img{
   position: relative;
-  right: 2.93rem;
+
 }
 #About .img{
   position: relative;
